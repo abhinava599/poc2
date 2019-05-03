@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jenkins-ci</groupId>
+    <artifactId>jenkins</artifactId>
+    <version>1.50</version>
+  </parent>
+
+  <properties>
+    <java.level>8</java.level>
+    <!-- Version of Maven Components -->
+    <maven.version>3.5.0</maven.version>
+  </properties>
+
+  <groupId>io.jenkins.tools.custom-war-packager</groupId>
+  <artifactId>parent-pom</artifactId>
+  <version>1.7-SNAPSHOT</version>
+  <name>Jenkins Custom WAR Packager Parent POM</name>
+  <description>Parent POM for packaging custom Jenkins WARs</description>
+  <packaging>pom</packaging>
+  <url>http://github.com/jenkinsci/custom-war-packager</url>
+
+  <modules>
+    <module>custom-war-packager-lib</module>
+    <module>custom-war-packager-cli</module>
+    <module>custom-war-packager-maven-plugin</module>
+    <module>jenkinsfile-runner-tests</module>
+  </modules>
+
+  <licenses>
+    <license>
+      <name>The MIT license</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:ssh://git@github.com/jenkinsci/custom-war-packager.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jenkinsci/custom-war-packager.git</developerConnection>
+    <url>http://github.com/jenkinsci/custom-war-packager</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>annotations</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+    <!-- Test deps -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci</groupId>
+      <artifactId>test-annotations</artifactId>
+      <version>1.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>
